@@ -1,0 +1,43 @@
+---
+title: "R-Benchmark"
+output: pdf_document
+---
+
+```{r, fig.width = 10, fig.height = 6}
+options(warn=-1)
+
+plain_results <- read.csv("results0.csv")
+record_results <- read.csv("results1.csv")
+replay_results <- read.csv("results2.csv")
+
+create_barplot <- function(..., legend, col, ylab, ltitle)
+{
+  num_values <- length(list(...)[[1]][,1])
+  all_results <- rbind(...)
+  
+  agg <- aggregate(. ~ mode, data = all_results, mean)
+  rownames(agg) <- agg[,1]
+  agg <- as.matrix(agg[,-1])
+  
+  par(mar=c(4,4,2,4))
+  par(lty = 0)
+  lim_max <- 1.2#ceiling(max(all_results))
+  lim_min <- floor(min(all_results))
+  bp <- barplot(agg, beside=T, legend=legend, col=col, ylim=c(lim_min,lim_max),
+                xaxt="n", args.legend=list(x = "topright", bty = "n", title=ltitle,
+                                           inset=c(-0.10, 0)), ylab=ylab)
+  #abline(h=lim_min:lim_max, col = "gray60", lty=2)
+  text(cex=1, x=colMeans(bp)+0.8, y=lim_min-0.1, names(all_results)[-1], xpd=TRUE,
+       srt=0, pos=2)
+  
+  stdev <- aggregate(. ~ mode, data = all_results, sd)
+  rownames(stdev) <- stdev[,1]
+  stdev <- as.matrix(stdev[,-1]) * qt((1 - 0.95) / 2, df = num_values - 1) / sqrt(num_values)
+  
+  arrows(bp, agg+stdev, bp, agg-stdev, angle=90, code=3, length=0.1, lty=1)
+}
+
+create_barplot(plain_results, record_results, replay_results,
+               legend=c("plain", "record", "replay"), ltitle="Run mode",
+               col=c("#55FF42", "#26B3FF", "#FF1500"), ylab="Time [s]")
+```

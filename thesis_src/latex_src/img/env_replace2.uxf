@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>120</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+env &lt;- environment()
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>160</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+rnd &lt;- runif(1)
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>200</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+env &lt;- .Call(C_return, env)
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>120</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+0xABC (added to trace)
+fg=black
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>160</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+0.42 (added to trace)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>200</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+0xABC (added to trace)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>90</y>
+      <w>170</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+Expression
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>90</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+Result when recording
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>90</y>
+      <w>320</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+Result when replaying
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>120</y>
+      <w>320</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+0x123 (0xABC in trace differs, thus 0xABC=0x123
+added to the replacement table)
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>160</y>
+      <w>320</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+0.42 (value in trace is not ENVSXP, so no need
+to search in the replacement table)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>200</y>
+      <w>320</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+0x123 (0xABC in trace recognized as ENVSXP
+and searched for in the replacement table)
+fg=black
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>240</y>
+      <w>170</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+useEnv(env)
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>240</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+(uses env 0xABC)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>240</y>
+      <w>320</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+lw=0
+(uses env 0x123 which is a valid env in this run)
+fg=black
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

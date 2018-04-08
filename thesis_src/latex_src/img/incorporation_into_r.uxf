@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>110</y>
+      <w>180</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>Handler functions
+--
+- record_before()
+- record_after()
+- replay_before()
+- replay_after()
+- eval_handler_before()
+- eval_handler_after()
+- eval_suppressor_before()
+- eval_suppressor_after()
+- record_JIT_before()
+- record_JIT_after()
+- replay_JIT_before()
+- replay_JIT_after()
+- do_lazyload_before()
+- do_lazyload_after()
+- record_browser_before()
+- record_browser_after()
+- replay_browser_before()
+- replay_browser_after()
+- record_stdout_vfprintf()
+- error_handler()
+- trace_state()
+
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>140</x>
+      <y>590</y>
+      <w>660</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>RRnR
+--
+
+bg=#ddeeff
+transparency=0
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>820</x>
+      <y>80</y>
+      <w>200</w>
+      <h>780</h>
+    </coordinates>
+    <panel_attributes>RRnR package
+--
+
+layer=-1
+bg=#ddeeff
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>130</x>
+      <y>80</y>
+      <w>680</w>
+      <h>780</h>
+    </coordinates>
+    <panel_attributes>Core R with RRnR modifications
+--
+bg=#ccddff
+transparency=0
+layer=-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>490</y>
+      <w>180</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>C implementation
+--
+- do_record()
+- do_replay()
+--
+- do_get_replay_struct()
+- parse_options()
+- add_to_trace()
+- peek_trace()
+- read_trace()
+- add_env_replacement()
+- replace_env()
+
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>490</y>
+      <w>340</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>names.c hooks
+--
+*RRnR_before &amp; RRnR_after in*
+  do_internal()
+
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>410</y>
+      <w>340</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>main.c hooks
+--
+*RRnR_browser_before &amp; RRnR_browser_after in*
+  do_browser()
+
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>150</x>
+      <y>410</y>
+      <w>290</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>errors.c hooks
+--
+*RRnR_error in*
+  error()
+
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>320</y>
+      <w>340</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lazyload.R hooks
+--
+*RRnR:::lazyload_before &amp; RRnR:::lazyload_after in*
+  lazyLoadDBexec()
+
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>150</x>
+      <y>620</y>
+      <w>290</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>RRnR.c wrapper functions
+--
+- RRnR_before()
+- RRnR_after()
+- RRnR_eval_before()
+- RRnR_eval_after()
+- RRnR_JIT_before()
+- RRnR_JIT_after()
+- RRnR_stdout_vfprintf()
+- RRnR_browser_before()
+- RRnR_browser_after()
+- RRnR_error()
+- RRnR_trace_state()
+
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>620</y>
+      <w>340</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>RRnR.c registrator functions
+--
+- RRnR_register_handlers()
+- RRnR_register_eval_handlers()
+- RRnR_register_JIT_handlers()
+- RRnR_register_stdout_vfprintf_handler()
+- RRnR_register_browser_handlers()
+- RRnR_register_error_handler()
+- RRnR_register_trace_state_handler()
+--
+- RRnR_get_all_handlers()
+- RRnR_remove_all_handlers()
+- RRnR_restore_all_handlers()
+
+transparency=0
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>140</x>
+      <y>110</y>
+      <w>660</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>Hooks in core R
+--
+
+bg=#ddeeff
+transparency=0
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>150</x>
+      <y>140</y>
+      <w>290</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>eval.c (bytecode intepreter) hooks
+--
+*RRnR_before &amp; RRnR_after in*
+  DO_DOTCALL(), CALL OP, CALLBUILTIN OP
+  
+*RRnR_eval_before &amp; RRnR_eval_after in*
+  eval()
+  
+*RRnR_JIT_before &amp; RRnR_JIT_after in*
+  R_execClosure()
+layer=2
+
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>140</y>
+      <w>340</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>eval.c (AST interpreter) hooks
+--
+*RRnR_before &amp; RRnR_after in*
+  eval()
+  
+*RRnR_browser_before &amp; RRnR_browser_after in*
+  do_if(), do_for(), do_while(), do_begin()
+
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>150</x>
+      <y>320</y>
+      <w>290</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>connections.c hooks
+--
+*RRnR_stdout_vfprintf in*
+  dummy_vfprintf(), file_vfprintf(),
+  stdout_vfprintf(), text_vfprintf()
+
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>680</y>
+      <w>180</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>R implementation
+--
++ record()
++ recordFindBug()
++ replay()
+--
+- clone_environments()
+- replace_environments()
+- clone_environment()
+- replace_environment()
+- iterate_environments()
+
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>150</x>
+      <y>490</y>
+      <w>290</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>debug.c hooks
+--
+*RRnR_trace_state in*
+  do_traceOnOff()
+
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
