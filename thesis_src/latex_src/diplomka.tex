@@ -111,7 +111,7 @@ The discovery of non-deterministic bugs may be improved if they could be reliabl
 
 The problem is illustrated by the following example program which calculates an average tangent value of a set of angles. Built-in \lstinline|tan()| function in R only works with radians so there are three helper functions implemented which calculate the tangent manually from degrees. The input angles are generated randomly in the range from 0 to 180 degrees but in reality they might be read from a user input or another non-deterministic source as well, the point is that they are different in each run.\par
 
-\begin{lstlisting}[style=filestyle, caption={The program containing a non-deterministic bug}]
+\begin{lstlisting}[style=filestyle, caption={The program containing a non-deterministic bug}, label=example_program]
 tangent <- function(y, x) y/x
 adjacent <- function(a, c) cospi(a / 180.0)*c
 opposite <- function(a, c) sinpi(a / 180.0)*c
@@ -1426,7 +1426,7 @@ This chapter focuses on evaluation of RRnR, testing how broadly it can be used a
 	\end{itemize}
 
 	\section{Example usage}
-	This section presents the usage of RRnR on an example program shown in the Introduction which computes average tangent of a given series of angles in degrees. The program works as expected but under some rare conditions it has an unexpected output \lstinline|Inf|.\par
+	This section presents the usage of RRnR on an example program shown in the Introduction (\hyperref[example_program]{Listing 1}) which computes average tangent of a given series of angles in degrees. The program works as expected but under some rare conditions it has an unexpected output \lstinline|Inf|.\par
 	
 	First it is necessary to record the program while the bug is visible. Because the bug has a low probability of appearance, it takes a lot of runs to experience it. Therefore the best approach is to keep recording the program in a loop until the bug is discovered.\par
 	
